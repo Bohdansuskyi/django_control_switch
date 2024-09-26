@@ -10,14 +10,14 @@
     <div class="container">
         <form method="post" action="{% url 'toggle' %}">
             {% csrf_token %}
-            <button type="submit" class="btn btn-primary btn-lg">ON/OFF</button> <!-- Кнопка без зміни тексту -->
+            <button type="submit" class="btn btn-primary btn-lg">ON/OFF</button> 
         </form>
     </div>
     <div class="container">
-        <h2>Status: {{ get_value }}</h2> <!-- Пробіл після Status: -->
+        <h2>Status: {{ get_value }}</h2> 
     </div>
     <div class="container">
-        <h2>Time of change: {{ time_get }}</h2> <!-- Пробіл після Time of change: -->
+        <h2>Time of change: {{ time_get }}</h2> 
     </div>
 </div>
 {% endblock %}

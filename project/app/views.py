@@ -10,8 +10,11 @@ from rest_framework.views import APIView
 
 # view for template
 def index(request):
+
+    # get last data from database
     data = get_information.objects.last()
     
+    # validate data
     if data:
         time_get = str(data.time_get)
         get_value = data.get_value
@@ -35,26 +38,26 @@ def toggle_view(request):
     if request.method == 'POST':
         last_record = send_information.objects.last()
 
-        # Перевіряємо чи є останній запис, якщо ні, значення True
+        # Check whether the last record is there, if not, the value is True
         new_active_value = not last_record.send_value if last_record else True
 
-        # Створюємо новий запис зі зміненим станом
+        # Create a new record with a changed state
         send_information.objects.create(send_value=new_active_value)
 
-        # Після створення нового запису, робимо редирект на головну сторінку
+        # After creating a new record, redirect to the main page
         return redirect('index')
 
 # API
 
 class GetSendInformationCreateView(APIView):
 
-    # GET: отримати get_value і вислати send_value
+    # GET: get get_value and send send_value
     def get(self, request):
-        # Отримуємо параметр get_value з URL
+        # Get the get_value parameter from the URL
         get_value = request.GET.get('get_value')
 
         if get_value:
-            # Логіка для обробки даних
+            # Logic for data processing
             data = {
                 'get_value': get_value,
             }
@@ -62,18 +65,18 @@ class GetSendInformationCreateView(APIView):
             serializer = GetInformationSerializer(data=data)
 
             if serializer.is_valid():
-                # Зберігаємо get_value у базу даних
+                # Store get_value in the database
                 serializer.save()
 
-                # Отримуємо останнє значення send_value
+                # Get the last value of send_value
                 last_send_value = send_information.objects.last()
 
                 if last_send_value:
                     send_value = last_send_value.send_value
                 else:
-                    send_value = False  # Значення за замовчуванням, якщо даних немає
+                    send_value = False  # Default value if no data
 
-                # Відповідаємо разом із send_value
+                # Respond together with send_value
                 return Response({
                     'send_value': send_value
                 }, status=status.HTTP_201_CREATED)
