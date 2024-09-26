@@ -75,7 +75,6 @@ class GetSendInformationCreateView(APIView):
 
                 # Відповідаємо разом із send_value
                 return Response({
-                    'get_value': serializer.data['get_value'],
                     'send_value': send_value
                 }, status=status.HTTP_201_CREATED)
             else:
