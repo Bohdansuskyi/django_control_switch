@@ -10,3 +10,7 @@ body {
     background-color: aliceblue;
     margin: auto;
 }
+
+.container {
+    padding-bottom: 30px;
+}

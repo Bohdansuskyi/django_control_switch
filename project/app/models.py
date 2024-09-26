@@ -7,11 +7,11 @@ class get_information(models.Model):
     time_get = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.id)
+        return f'Get: {self.get_value}, Created at: {self.time_get}'
     
 class send_information(models.Model):
-    send_value = models.BooleanField()
+    send_value = models.BooleanField(default=False)
     time_send = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return str(self.id)
+        return f'Send: {self.send_value}, Created at: {self.time_send}'
