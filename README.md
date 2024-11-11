@@ -25,3 +25,5 @@ The aim of this project is to learn how to control IoT devices (like relays and 
 
 You can learn how to deploy a Django project in this video: [How to Deploy a Django Project](https://www.youtube.com/watch?v=xtnUwvjOThg)
 
+# Homepage of the website
+![20240926_202427](https://github.com/user-attachments/assets/cca91c70-731e-47ed-9cd4-58fbee075326)
