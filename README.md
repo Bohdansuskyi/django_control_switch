@@ -1,3 +1,15 @@
+# Projekt IoT: NodeMCU v3 z przekaźnikiem (LED) sterowanym przez Django REST API
+Projekt demonstruje, jak kontrolować przekaźniki, diody LED lub inne urządzenia wymagające przełączania binarnego (True/False) za pomocą protokołu HTTP. Projekt integruje NodeMCU v3 z Django REST Framework API, umożliwiając zdalne sterowanie stanami urządzeń. Aplikacja Django może być hostowana na serwisach takich jak PythonAnywhere.
+### Przegląd projektu
+Celem tego projektu jest nauka sterowania urządzeniami IoT (np. przekaźnikami i diodami LED) za pomocą API opartego na HTTP. Dzięki Django REST Framework możemy łatwo obsługiwać żądania API i przełączać stany urządzeń przez internet. NodeMCU komunikuje się z backendem Django, wysyłając i odbierając dane do sterowania stanami urządzeń.
+### Funkcje
+- Sterowanie przekaźnikami lub diodami LED za pomocą żądań HTTP GET.
+- Integracja z Django REST API.
+- Proste wdrożenie na PythonAnywhere.
+- Zrozumienie koncepcji sterowania urządzeniami IoT.
+### Wada
+Jedną z wad jest to, że czas pomiaru jest rejestrowany w GMT zamiast w lokalnej strefie czasowej.
+_____________________________________________________________________________________________________________________________
 # IoT Project: NodeMCU v3 with Relay (LED) Control via Django REST API
 
 This project demonstrates how to control relays, LEDs, or other devices that require binary (True/False) state switching using the HTTP protocol. The project integrates a NodeMCU v3 with a Django REST Framework API, allowing state changes to be transmitted and controlled remotely. The Django application can be hosted on services like PythonAnywhere.
